@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/script.js" defer type="module"></script>
+    <title>Calcule seu IMC</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <section>
+                <h1>Calcule seu Índice de Massa Corporal (IMC)</h1>
+
+                <p>O IMC é um cálculo simples que permite avaliar se a pessoa está dentro do peso
+                    que é considerado ideal para a sua altura
+                </p>
+
+                <form>
+                    <div class="input-wrapper">
+                        <label for="weight">Peso (kg)</label>
+                        <input type="text" id="weight" name="weight_user" maxlength="3" placeholder="Ex: 60">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="weight">Altura (cm)</label>
+                        <input type="text" id="height" name="height_user" maxlength="3" placeholder="Ex: 175">
+                    </div>
+
+                    <button type="submit">
+                        Calcular IMC
+                    </button>
+                </form>
+            </section>
+           
+            <img src="./assets/imc2.png" 
+            alt="Desenho de profissional de saúde avaliando uma paciente
+            que está em cima de uma balança antopométrica de alta precisão">
+        </div>
+
+        <div class="modal-wrapper">
+            <div class="modal-card">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
