@@ -10,39 +10,38 @@
 <body>
     <div class="container">
         <div class="card">
-            <section>
-                <h1>Calcule seu Índice de Massa Corporal (IMC)</h1>
-
-                <p>O IMC é um cálculo simples que permite avaliar se a pessoa está dentro do peso
-                    que é considerado ideal para a sua altura
-                </p>
-
+            <main>
+                <header>
+                    <h1>Calcule e descubra seu IMC</h1>
+                    <p>IMC é a sigla para Índice de Masssa Corpórea, parâmetro adotado pela Organização Muncial de Saúde
+                        para calcular o peso ideal de cada pessoa.
+                    </p>
+                </header>
+    
                 <form>
                     <div class="input-wrapper">
-                        <label for="weight">Peso (kg)</label>
-                        <input type="text" id="weight" name="weight_user" maxlength="3" placeholder="Ex: 60">
+                        <label for="weight">Peso (Kg)</label>
+                        <input type="text" id="weight" name="weight_user" maxlength="3">
                     </div>
-
+    
                     <div class="input-wrapper">
-                        <label for="weight">Altura (cm)</label>
-                        <input type="text" id="height" name="height_user" maxlength="3" placeholder="Ex: 175">
+                        <label for="height">Altura (cm)</label>
+                        <input type="text" id="height" name="height_user" maxlength="3">
                     </div>
-
+    
                     <button type="submit">
-                        Calcular IMC
+                        Calcular
                     </button>
                 </form>
-            </section>
+    
+            </main>
            
-            <img src="./assets/imc2.png" 
-            alt="Desenho de profissional de saúde avaliando uma paciente
-            que está em cima de uma balança antopométrica de alta precisão">
-        </div>
+            <section>
+                <h1>Seu IMC é:</h1>
+                <span id="resultImc"></span>
 
-        <div class="modal-wrapper">
-            <div class="modal-card">
-
-            </div>
+                <p id="statusImc"></p>
+            </section>
         </div>
     </div>
 </body>
