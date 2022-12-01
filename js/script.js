@@ -1,4 +1,4 @@
-import { calculateImc, showImc, showStats } from "./utils.js";
+import { calculateImc, showImc, resultStatusImc } from "./utils.js";
 
 const form = document.querySelector('form');
 const inputWeight = document.querySelector('#weight');
@@ -10,38 +10,40 @@ form.onsubmit = (event) => {
     const weight = Number(inputWeight.value);
     const height = Number(inputHeight.value);
 
-    const resultImc = calculateImc(weight, height);
+    const valueImc = calculateImc(weight, height);
 
-    const messageImc = `${resultImc}`
+    showImc.messageImc.innerText = `${valueImc}`;
+    
+    let messageStatusImc
 
-    showImc.messageImc.innerText = messageImc;
+
+    function verifyImc(){
+        if (valueImc < 18.5 ){
+            showImc.messageImc.style.color = '#8A0829'
+            resultStatusImc.messageStats.innerText = 'Você está abaixo do peso'
+        } else if (valueImc > 18.5 && valueImc <= 24.9){
+            showImc.messageImc.style.color = '#31B404'
+            resultStatusImc.messageStats.innerText = 'Você está com o peso normal'
+        }else if (valueImc >= 25 && valueImc <= 29.9){
+            showImc.messageImc.style.color = '#ffc92ecc'
+            resultStatusImc.messageStatusImc = 'Você está com sobrepeso' 
+        } else if(valueImc >= 30 && valueImc <= 34.9 ){
+            showImc.messageImc.style.color = '#FF8000'
+            resultStatusImc.messageStatusImc = 'Você está com Obesidade Grau I'
+        }
+         else if(valueImc >= 35 && valueImc <= 39.9){
+            showImc.messageImc.style.color = '#FF4000'
+            resultStatusImc.messageStatusImc = 'Você está com Obesidade Grau II'
+        }
+         else{
+            showImc.messageImc.style.color = '#B40404'
+            resultStatusImc.messageStatusImc = 'Você está com Obesidade Grau III ou Mórbida'
+        }
+    }
+
+    verifyImc()
    
-   let messageStatusImc
-
-
-    if (resultImc < 18.5 ){
-        messageStatusImc = 'Você está abaixo do peso'
-        showImc.messageImc.style.color = '#8A0829'
-    } else if (resultImc > 18.5 && resultImc <= 24.9){
-        messageStatusImc = 'Você está com o peso normal'
-        showImc.messageImc.style.color = '#31B404'
-    }else if (resultImc >= 25 && resultImc <= 29.9){
-        messageStatusImc = 'Você está com sobrepeso'
-        showImc.messageImc.style.color = '#ffc92ecc'
-      
-    } else if(resultImc >= 30 && resultImc <= 34.9 ){
-        messageStatusImc = 'Você está com Obesidade Grau I'
-        showImc.messageImc.style.color = '#FF8000'
-    }
-     else if(resultImc >= 35 && resultImc <= 39.9){
-        messageStatusImc = 'Você está com Obesidade Grau II'
-        showImc.messageImc.style.color = '#FF4000'
-    }
-     else{
-        messageStatusImc = 'Você está com Obesidade Grau III ou Mórbida'
-        showImc.messageImc.style.color = '#B40404'
-    }
-
-    showStats.messageStats.innerText = messageStatusImc;
+    
+   form.reset()
 }
 

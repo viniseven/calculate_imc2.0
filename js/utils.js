@@ -7,6 +7,6 @@ export const showImc = {
     messageImc: document.querySelector('#resultImc')
 }
 
-export const showStats = {
+export const resultStatusImc = {
     messageStats: document.querySelector('#statusImc')
 }
