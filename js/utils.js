@@ -8,5 +8,13 @@ export const showImc = {
 }
 
 export const resultStatusImc = {
-    messageStats: document.querySelector('#statusImc')
+    messageAlertImc: document.querySelector('#statusImc')
+}
+
+export function verifyInputIsNotNumber(value){
+    return isNaN(value)
+}
+
+export function verifyInputIsEmpty(value){
+    return value == ""
 }

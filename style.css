@@ -99,6 +99,31 @@ section p{
     font-size: 1.5rem;
 }
 
+.alertError{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #B40404;
+    height: 3.6rem;
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+    transition: transform .3s;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: .8rem 0;
+}
+
+.alertError.open{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (min-width: 768px){
     .card{
         display: flex;
